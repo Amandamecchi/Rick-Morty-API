@@ -1,0 +1,23 @@
+.card{
+    width: 290px;
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+    min-height: 290px;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+.avatar {
+    width: 105%;
+    border-radius: 50%;
+}
+
+.title {
+    margin: 10px 0 5px;
+    font-size: 20px;
+}
