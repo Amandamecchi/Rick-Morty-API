@@ -109,9 +109,9 @@ export default function Home() {
         toast.success("Filtro foi resetado", { position: "top-left" });
     };
 
-    // ---------------------------------------------
-    // clicar card e toast
-    // ---------------------------------------------
+
+
+
     const handleCardClick = (char) => {
         toast.info(`Você clicou em ${char.name} que está ${char.status}`);
     };
@@ -139,20 +139,24 @@ export default function Home() {
                 Buscar
             </button>
             <button
-                onClick={() => {
-                    setSearch("");
-                    setCharacters([]);
-                    setNotFound(false);
-                }}
-                className={styles.buttonRed}
-            >
-                Resetar
-            </button>
+                    onClick={() => {
+                        setSearch("");
+                        fetchCharacters();
+                    }}
+                    className={styles.buttonRed}
+                >
+                    🗑
+                </button>
 
             <div className={styles.navControls}>
                 <button onClick={() => setPage((p) => Math.max(p - 1, 1))} disabled={page === 1} className={styles.buttonNav}>
                     Página anterior
                 </button>
+
+                <span className={styles.pageIndicator}>
+                    Página {page} de {totalPages}
+                </span>
+
                 <button onClick={() => setPage((p) => Math.min(p + 1, totalPages))} disabled={page === totalPages} className={styles.buttonNav}>
                     Próxima página
                 </button>
